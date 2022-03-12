@@ -1,6 +1,20 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+	input[type=button] {
+		background-color: #e7e7e7;
+		border: none;
+		color: black;
+		padding: 10px 28px;
+		border-radius: 8px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 18px;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	}
+</style>
 <head>
 	<link href="~/Content/app.css" rel="stylesheet" />
 </head>
@@ -11,18 +25,16 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Food Packaging</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Search for various products available in Australia and know how they are packaged
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><input type="button" value="Learn more >" onclick="location.href='@Url.Action("Index", "ProductPackagings/Index")'" /></p>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more >> &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Web Hosting</h2>
