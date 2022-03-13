@@ -152,6 +152,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductPackagingsController.cs" />
+    <Compile Include="Controllers\RecycleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -369,6 +370,7 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\FIT512220220312141921 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -475,6 +477,7 @@
     <Content Include="Views\ProductPackagings\Details.cshtml" />
     <Content Include="Views\ProductPackagings\Edit.cshtml" />
     <Content Include="Views\ProductPackagings\Index.cshtml" />
+    <Content Include="Views\Recycle\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="excelfolder\" />

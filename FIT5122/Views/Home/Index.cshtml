@@ -1,44 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Home Page";
 }
 <style>
-	input[type=button] {
-		background-color: #e7e7e7;
-		border: none;
-		color: black;
-		padding: 10px 28px;
-		border-radius: 8px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 18px;
-		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	body {
+		background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://cutewallpaper.org/21/recycle-wallpapers/Best-48-Wallpaper-Recycling-on-HipWallpaper-Aluminum-Can-.jpg');
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		color: #ffff;
 	}
+
+	.jumbotron {
+		color: black;
+		background: rgba(204, 204, 204, 0.5);
+	}
+
+		.jumbotron h1 {
+			font-family: "Lucida Console", "Courier New", monospace;
+		}
 </style>
-<head>
-	<link href="~/Content/app.css" rel="stylesheet" />
-</head>
 <div class="jumbotron">
-    <h1>SUSTAINABLE VICTORIA</h1>
+	<h1>SUSTAINABLE VICTORIA</h1>
 	<p class="lead">A step towards ethical and environmentally-friendly practices</p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Food Packaging</h2>
-        <p>
-            Search for various products available in Australia and know how they are packaged
-        </p>
-        <p><input type="button" value="Learn more >" onclick="location.href='@Url.Action("Index", "ProductPackagings/Index")'" /></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more >> &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+	<div class="col-md-4">
+		<h2>Product Packaging</h2>
+		<p>
+			Search for various products available in Australia and know how they are packaged
+		</p>
+		<p><a class="btn btn-default" href='@Url.Action("Index", "ProductPackagings/Index")'>Learn more &raquo;</a></p>
+	</div>
+	<div class="col-md-4">
+		<h2>Recycling trends</h2>
+		<p>Study the Victorian recycling patterns over the years and know how recycling can impact your lives </p>
+		<p><a class="btn btn-default" href='@Url.Action("Index", "Recycle/Index")'>Learn more &raquo;</a></p>
+	</div>
+	<div class="col-md-4">
+		<h2>Web Hosting</h2>
+		<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+		<p><a class="btn btn-default" href='@Url.Action("Index", "Recycle/Index")'>Learn more &raquo;</a></p>
+	</div>
 </div>
