@@ -4353,7 +4353,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding: 15px 15px;
     font-size: 18px;
     line-height: 20px;
-    font-family: 'Facebook Letter Faces'
+    font-family: 'cursive'
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4666,8 +4666,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+    background-color: #222;
+    border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;

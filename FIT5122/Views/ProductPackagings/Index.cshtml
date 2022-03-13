@@ -1,27 +1,29 @@
 ﻿@model IEnumerable<FIT5122.Models.ProductPackagings>
 
 @{
-	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <style>
 	body {
-		background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://cutewallpaper.org/21/recycle-wallpapers/Best-48-Wallpaper-Recycling-on-HipWallpaper-Aluminum-Can-.jpg');
+		background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)), url('https://cutewallpaper.org/21/recycle-wallpapers/Best-48-Wallpaper-Recycling-on-HipWallpaper-Aluminum-Can-.jpg');
 		background-repeat: no-repeat;
 		background-size: 100% auto;
+		background-attachment: fixed;
 		color: #ffff;
 	}
-
-	.jumbotron {
-		color: black;
-		background: rgba(204, 204, 204, 0.5);
+	h2 {
+		font-weight: bold;
+		font-family: cursive;
 	}
-
-		.jumbotron h1 {
-			font-family: "Lucida Console", "Courier New", monospace;
-		}
+	td, th {
+		font-family: cursive;
+	}
+	th {
+		font-size: 18px;
+	}
 </style>
-<h2>Index</h2>
+<h2>PRODUCT PACKAGING</h2>
 <p>
 	@Html.ActionLink("Create New", "Create")
 </p>
