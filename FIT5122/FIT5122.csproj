@@ -480,6 +480,7 @@
     <Content Include="Views\Recycle\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bgimages\" />
     <Folder Include="excelfolder\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
