@@ -20,10 +20,10 @@ namespace FIT5122.Models
         {
         }
     
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+            //throw new UnintentionalCodeFirstException();
+        //}
     
         public virtual DbSet<ProductPackagings> ProductPackagings { get; set; }
     }

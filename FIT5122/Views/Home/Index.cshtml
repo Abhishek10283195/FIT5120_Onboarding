@@ -4,8 +4,9 @@
 <style>
 	body {
 		background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../../bgimages/background.jpg');
+		background-position: center;
 		background-repeat: no-repeat;
-		background-size: 100% auto;
+		background-size: cover;
 		color: #ffff;
 	}
 	.jumbotron {
@@ -28,22 +29,30 @@
 	<h1>RECYCLE VICTORIA</h1>
 	<p class="lead">A step towards ethical and environmentally-friendly practices</p>
 </div>
+
+<div>
+	<p>Did you know the COVID-19 pandemic lead to an increases in garbage collected from households?</p>
+	<p>Did you know Victorian households generated more than 2.37 million tonnes of waste in 2019-20, an increase of 3.6 per cent from 2018–19?</p>
+	<p>Did you know there are 85% of plastics being sent to our landfill because of recycling contamination?</p><br />
+</div>
+
 <div class="row">
-	<div class="col-md-4">
-		<h2>PRODUCT PACKAGING</h2>
-		<p>
-			Search for various products available in Australia and know how they are packaged
-		</p>
-		<p><a class="btn btn-default" href='@Url.Action("Index", "ProductPackagings/Index")'>Learn more &raquo;</a></p>
-	</div>
 	<div class="col-md-4">
 		<h2>RECYCLING TRENDS</h2>
 		<p>Study the Victorian recycling patterns over the years and know how recycling can impact your lives </p>
 		<p><a class="btn btn-default" href='@Url.Action("Index", "Recycle/Index")'>Learn more &raquo;</a></p>
 	</div>
 	<div class="col-md-4">
-		<h2>ABOUT</h2>
+		<h2>PRODUCT PACKAGING</h2>
+		<p>
+			Search among a wide range of food products available in Australia and know how they are packaged  
+		</p>
+		<p><a class="btn btn-default" href='@Url.Action("Index", "ProductPackagings/Index")'>Learn more &raquo;</a></p>
+	</div>
+
+	<div class="col-md-4">
+		<h2>ABOUT US</h2>
 		<p>Know who we are, what our mission is and what we value as international students living in Victoria</p>
 		<p><a class="btn btn-default" href='@Url.Action("Index", "Home/About")'>Learn more &raquo;</a></p>
 	</div>
-</div>
+</div><br /><br />
