@@ -25,9 +25,7 @@
 </style>
 <h2>PRODUCT PACKAGING</h2>
 <br />
-<p>
-	@Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -71,9 +69,17 @@
 	@Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
 	<script>
 		 $(document).ready(function () {
-		 $('.table').DataTable();
+			 $('.table').DataTable({
+				 language: {
+					 searchPlaceholder: "Search products",
+					 search: "",
+				 }
+			 });
 		 });
+
+
 	</script>
 }
 <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
 	  rel="stylesheet" />
+
