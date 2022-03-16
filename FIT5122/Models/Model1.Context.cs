@@ -13,18 +13,18 @@ namespace FIT5122.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProductPackagingContainer : DbContext
+    public partial class Model1Container : DbContext
     {
-        public ProductPackagingContainer()
-            : base("name=ProductPackagingContainer")
+        public Model1Container()
+            : base("name=Model1Container")
         {
         }
     
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+       // protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
-            //throw new UnintentionalCodeFirstException();
-        //}
+        //    throw new UnintentionalCodeFirstException();
+     //   }
     
-        public virtual DbSet<ProductPackagings> ProductPackagings { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

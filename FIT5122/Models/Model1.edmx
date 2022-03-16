@@ -4,45 +4,48 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProductPackaging.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="ProductPackagingStoreContainer">
-    <EntitySet Name="ProductPackagings" EntityType="ProductPackaging.Store.ProductPackagings" store:Type="Tables" Schema="dbo" />
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Products" EntityType="Model1.Store.Products" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
-  <EntityType Name="ProductPackagings">
+  <EntityType Name="Products">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Productname" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Packaging" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Bin" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ProductPackaging" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="ProductPackagingContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ProductPackagings" EntityType="ProductPackaging.ProductPackagings" />
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Model1.Product" />
         </EntityContainer>
-        <EntityType Name="ProductPackagings">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Productname" Type="String" Nullable="true" />
           <Property Name="Packaging" Type="String" Nullable="true" />
+          <Property Name="Bin" Type="String" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ProductPackagingStoreContainer" CdmEntityContainer="ProductPackagingContainer">
-    <EntitySetMapping Name="ProductPackagings">
-      <EntityTypeMapping TypeName="IsTypeOf(ProductPackaging.ProductPackagings)">
-        <MappingFragment StoreEntitySet="ProductPackagings">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Product)">
+        <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Productname" ColumnName="Productname" />
           <ScalarProperty Name="Packaging" ColumnName="Packaging" />
+          <ScalarProperty Name="Bin" ColumnName="Bin" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

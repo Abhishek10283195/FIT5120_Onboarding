@@ -12,10 +12,11 @@ namespace FIT5122.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductPackagings
+    public partial class Product
     {
         public int Id { get; set; }
         public string Productname { get; set; }
         public string Packaging { get; set; }
+        public string Bin { get; set; }
     }
 }

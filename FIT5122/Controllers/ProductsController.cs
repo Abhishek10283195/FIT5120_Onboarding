@@ -13,23 +13,23 @@ using LinqToExcel;
 
 namespace FIT5122.Controllers
 {
-    public class ProductPackagingsController : Controller
+    public class ProductsController : Controller
     {
-        private ProductPackagingContainer db = new ProductPackagingContainer();
+        private Model1Container db = new Model1Container();
 
         // GET: ProductPackagings
         public ActionResult Index()
         {
-            return View(db.ProductPackagings.ToList());
+            return View(db.Products.ToList());
         }
         public FileResult DownloadExcel()
         {
-            string path = "~Uploads/openfoodfacts_export.xlsx";
-            return File(path, "application/vnd.ms-excel", "openfoodfacts_export.xlsx");
+            string path = "~Uploads/cleaned_data.xlsx";
+            return File(path, "application/vnd.ms-excel", "cleaned_data.xlsx");
         }
 
         [HttpPost]
-        public JsonResult UploadExcel(ProductPackagings users, HttpPostedFileBase FileUpload)
+        public JsonResult UploadExcel(Product users, HttpPostedFileBase FileUpload)
         {
 
             List<string> data = new List<string>();
@@ -58,17 +58,18 @@ namespace FIT5122.Controllers
                     DataTable dtable = ds.Tables["ExcelTable"];
                     string sheetName = "Sheet1";
                     var excelFile = new ExcelQueryFactory(pathToExcelFile);
-                    var artistAlbums = from a in excelFile.Worksheet<ProductPackagings>(sheetName) select a;
+                    var artistAlbums = from a in excelFile.Worksheet<Product>(sheetName) select a;
                     foreach (var a in artistAlbums)
                     {
                         try
                         {
                             if (a.Packaging != "" && a.Productname != "")
                             {
-                                ProductPackagings TU = new ProductPackagings();
+                                Product TU = new Product();
                                 TU.Productname = a.Productname;
                                 TU.Packaging = a.Packaging;
-                                db.ProductPackagings.Add(TU);
+                                TU.Bin = a.Bin;
+                                db.Products.Add(TU);
                                 db.SaveChanges();
                             }
                             else
@@ -125,12 +126,12 @@ namespace FIT5122.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductPackagings productPackagings = db.ProductPackagings.Find(id);
-            if (productPackagings == null)
+            Product product = db.Products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(productPackagings);
+            return View(product);
         }
 
         // GET: ProductPackagings/Create
@@ -144,11 +145,11 @@ namespace FIT5122.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Productname,Packaging")] ProductPackagings productPackagings)
+        public ActionResult Create([Bind(Include = "Id,Productname,Packaging")] Product productPackagings)
         {
             if (ModelState.IsValid)
             {
-                db.ProductPackagings.Add(productPackagings);
+                db.Products.Add(productPackagings);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -163,7 +164,7 @@ namespace FIT5122.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductPackagings productPackagings = db.ProductPackagings.Find(id);
+            Product productPackagings = db.Products.Find(id);
             if (productPackagings == null)
             {
                 return HttpNotFound();
@@ -176,7 +177,7 @@ namespace FIT5122.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Productname,Packaging")] ProductPackagings productPackagings)
+        public ActionResult Edit([Bind(Include = "Id,Productname,Packaging,Bin")] Product productPackagings)
         {
             if (ModelState.IsValid)
             {
@@ -194,7 +195,7 @@ namespace FIT5122.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductPackagings productPackagings = db.ProductPackagings.Find(id);
+            Product productPackagings = db.Products.Find(id);
             if (productPackagings == null)
             {
                 return HttpNotFound();
@@ -207,8 +208,8 @@ namespace FIT5122.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ProductPackagings productPackagings = db.ProductPackagings.Find(id);
-            db.ProductPackagings.Remove(productPackagings);
+            Product productPackagings = db.Products.Find(id);
+            db.Products.Remove(productPackagings);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
